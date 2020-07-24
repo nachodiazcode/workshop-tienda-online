@@ -1,0 +1,29 @@
+<mat-card>
+    <mat-card-title>{{title}}</mat-card-title>
+    <img mat-card-image *ngIf="form.value?.thumbImage &&
+                             !form.get('thumbImage').invalid" [src]="form.value.thumbImage">
+    <mat-card-content>
+    <form [formGroup]="form">
+        <mat-form-field>
+            <input type="text" matInput placeholder="Titulo" formControlName="title" >
+        </mat-form-field>
+        <mat-form-field>
+            <input type="text" matInput placeholder="Marca" formControlName="brand" >
+        </mat-form-field>
+        <mat-form-field>
+            <input type="text" matInput placeholder="Precio" formControlName="price">
+        </mat-form-field>
+        <mat-form-field>
+            <input type="text" matInput placeholder="Precio de Venta" formControlName="salePrice" >
+        </mat-form-field>
+        <mat-form-field>
+            <input type="text" matInput placeholder="URl de la imagen" formControlName="thumbImage" >
+        </mat-form-field>
+    </form> 
+    </mat-card-content>
+    <mat-card-actions>
+        <button mat-raised-button color="primary" (click)="onSubmit()">{{labelSubmit}}</button>
+        <button mat-raised-button color="basic" (click)="onCancel()">Cancel</button>
+    </mat-card-actions>
+</mat-card>
+
